@@ -4,7 +4,7 @@ WITH orders AS (
     USER_ID AS customer_id,
     order_date,
     status
-  FROM `raw-data-411921.jaffle_shop.orders`
+  FROM {{ source('jaffle_shop', 'orders') }}
 )
 
 SELECT * FROM orders
